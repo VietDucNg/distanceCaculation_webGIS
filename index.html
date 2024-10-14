@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- disable unwanted scaling-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- title of the webpage-->
+    <title>geographic distance calculator</title>
+
+    <!-- link leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- link easy button css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <!-- link google font css-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- link font awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <!-- link to my css-->
+     <link rel="stylesheet" href="styles/style.css">
+
+  </head>
+  <body>
+    <!-- Add the map title -->
+    <div id="title"> Geographic Distance Calculator</div>
+
+    <!-- container for map -->
+     <div id="map"></div>
+
+    <!-- info box -->
+    <div id="infoBox">
+      <h2>Credit</h2>
+      <p> 👨‍🏫 The webmap developed by <a href='https://vietducng.github.io/'>Viet Nguyen</a> (<a href = 'https://geo.uni-greifswald.de/en/chairs/geographie/translate-to-english-fernerkundung-und-geoinformationsverarbeitung/translate-to-english-team/'>University of Greifswald | Institute of Geography and Geology</a>).</p>
+      <h2>Data</h2>
+      <h3>🌧️ Precipitation layer</h3>
+      <p> 
+      - <strong>Layer type</strong>: OGC Web Map Service <br> 
+      - <strong>Summary</strong>: A National Weather Service image product depicting current precipitation derived from a network of radar stations. The web service is provided by <a href='https://mesonet.agron.iastate.edu/ogc/'>Iowa State University Mesonet</a>. <br> 
+      - <strong>Service URL</strong>: <a href='https://www.weather.gov/documentation/services-web-api#/default/get_alerts_active'> <i> https://www.weather.gov/documentation/services-web-api#/default/get_alerts_active </i></a><br> 
+      </p>
+
+      <h3> 🌪️ Weather alerts layer</h3>
+      <p> 
+      - <strong>Layer type</strong>: GeoJSON <br> 
+      - <strong>Summary</strong>: Areas under a weather alert issued by the National Weather Service, such as a tornado warning. See the NWS for <a href = 'https://www.weather.gov/documentation/services-web-api#/default/get_alerts_active'>details on the API</a>. <br> 
+      - <strong>Service URL</strong>: <a href='https://www.weather.gov/documentation/services-web-api#/default/get_alerts_active'> <i> https://www.weather.gov/documentation/services-web-api#/default/get_alerts_active </i></a><br> 
+      </p>
+    </div>
+
+    
+    <!-- container for webapp getting distance from web service -->
+    <div class="container">
+      <div class="input-table">
+        <div class="input-group">
+          <label for="latA">Point A</label>
+          <input type="text" id="latA" placeholder="Latitude" />
+          <input type="text" id="lonA" placeholder="Longitude" />
+        </div>
+        <div class="input-group">
+          <label for="latB">Point B</label>
+          <input type="text" id="latB" placeholder="Latitude" />
+          <input type="text" id="lonB" placeholder="Longitude" />
+        </div>
+      </div>
+      <hr />
+      <input type="submit" id="submit" value="Calculate Distance" />
+      <br />
+      <div id="result">
+        <label>Distance (km):</label>
+        <h1 id="output">0</h1>
+      </div>
+    </div>
+
+    <!-- link leaflet scipt-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <!-- link easy button scipt-->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <!-- link to jquery js-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- link to my js-->
+    <script src="scripts/main.js"></script>
+    <!-- link script for marker function -->
+     <script src="scripts/marker.js"></script>
+    <!-- link script to draw a line between 2 points-->
+     <script src="scripts/drawLine.js"></script>
+  </body>
+</html>
