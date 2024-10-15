@@ -27,6 +27,6 @@ if (latA && lonA && latB && lonB) {
 
     // Adjust the map's center and zoom to fit both markers based on the
     // bounding box that encompases the 2 markers
-    map.fitBounds([pointA, pointB]);
+    map.fitBounds([pointA, pointB],{padding: [100,100]});
 }
 }

@@ -27,7 +27,6 @@ var lonA = document.getElementById('lonA').value;
         var lat = parseFloat(latA);
         var lon = parseFloat(lonA);
 
-
         // Validate if the input values are valid coordinates
         if (!isNaN(lat) && !isNaN(lon) && lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180) {
         // Center the map at Point A's coordinates with a zoom level of 4
