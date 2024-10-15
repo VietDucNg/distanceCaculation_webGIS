@@ -37,25 +37,6 @@ L.easyButton('<span>&#8505;</span>', function(){
 }).addTo(map);
 
 
-// get distance from web service
-$("#submit").click(function () {
-    // Read the text input boxes to get the user's coordinates, add them to the URL to request the web service
-    $.getJSON(
-      "https://5fjstt-8080.csb.app",
-      {
-        latA: $("#latA").val(),
-        lonA: $("#lonA").val(),
-        latB: $("#latB").val(),
-        lonB: $("#lonB").val(),
-      },
-
-      // Receive the response from the web service, print the distance on the webpage
-      function (data) {
-        $("#output").html(data.distance);
-      }
-    );
-  });
-
 //// add coordinates information when mouse hover
 // Get reference to the coordinates display element
 var coordDisplay = document.getElementById('coordInfo');
