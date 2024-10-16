@@ -140,3 +140,9 @@ hr {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 12px;
 }
+
+/* style the scale control */
+.leaflet-control-scale {
+  bottom: 35px !important; 
+  right: 10px !important;   /* !important ensures that the custom positioning overrides the default Leaflet styles.*/
+}

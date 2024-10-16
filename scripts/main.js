@@ -6,11 +6,10 @@ var base_topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/service
 	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
 }).addTo(map);
 
-var base_gg = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
-  maxZoom: 20,
-  subdomains: ['mt0','mt1','mt2','mt3']
+var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+	maxZoom: 16
 });
-
 
 //// add popup with coordinates when clicked
 var popup = L.popup();
@@ -76,14 +75,14 @@ map.on('dblclick', function (e) {
 });
 
 
-
 //// add layers control
 // create control object 
 var baseLayers = {
   'Esri Topo': base_topo,
-  'Google Satellite': base_gg
+  'Esri Geo': Esri_NatGeoWorldMap
 };
 // add layers control to map
 var layersControl = L.control.layers(baseLayers).addTo(map);
+
 // add scale control to map
-L.control.scale().addTo(map);
+L.control.scale({ position: 'bottomright' }).addTo(map);
