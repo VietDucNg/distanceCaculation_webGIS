@@ -43,6 +43,14 @@ html, body, #map {
   box-shadow: 0 1px 5px rgba(0,0,0,65);
 }
 
+/* style GPS button */
+#gpsButton {
+  z-index: 2000;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0,0,0,65);
+}
+
 /* #### style container of webapp */
 .container {
   position: absolute;
